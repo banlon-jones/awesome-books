@@ -11,9 +11,9 @@ if (localStorage.getItem('books')) {
 }
 
 function removeBook(id) {
-    books = books.filter((item) => { Number(id) !== item.id });
-    localStorage.setItem('books', JSON.stringify(books));
-    display();
+  books = books.filter((item) => { Number(id) !== item.id; });
+  localStorage.setItem('books', JSON.stringify(books));
+  display();
 }
 
 function display() {

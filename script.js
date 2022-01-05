@@ -29,7 +29,9 @@ function addBook(name, author) {
   const id = Math.floor(Math.random() * 1000);
   books.push({ name, author, id });
   localStorage.setItem('books', JSON.stringify(books));
-  location.reload();
+  bookList.innerHTML = ``;
+
+  display();
 }
 
 add.addEventListener('click', (e) => {
@@ -38,13 +40,11 @@ add.addEventListener('click', (e) => {
 });
 
 function removeBook(id) {
-  books = books.filter((item) => {
-    return id != item.id;
-  });
+  books = books.filter(item => Number(id) !== item.id)
   localStorage.setItem('books', JSON.stringify(books));
-  location.reload();
+  bookList.innerHTML = ``;
+  display();
 }
-
 
 const remove = document.querySelectorAll('.btn-remove');
 remove.forEach((item) => {

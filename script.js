@@ -7,10 +7,9 @@ const { title, author } = addBookForm.elements;
 
 // displaying books in localStorage
 if (localStorage.getItem('books')) {
-  console.log(JSON.parse(localStorage.getItem('books')));
   books = JSON.parse(localStorage.getItem('books'));
 } else {
-  console.log("failed");
+
 }
 
 function display() {
@@ -27,21 +26,20 @@ function display() {
 display();
 
 function addBook(name, author) {
-  let id = Math.floor(Math.random() * 1000);
-  books.push({name, author, id});
+  const id = Math.floor(Math.random() * 1000);
+  books.push({ name, author, id });
   localStorage.setItem('books', JSON.stringify(books));
   location.reload();
 }
 
-add.addEventListener('click', (e)=>{
+add.addEventListener('click', (e) => {
   e.preventDefault();
   addBook(title.value, author.value);
-  console.log(books);
 });
 
 function removeBook(id) {
   books = books.filter((item) => {
-    return item.id != id;
+    return id != item.id;
   });
   localStorage.setItem('books', JSON.stringify(books));
   location.reload();
@@ -50,9 +48,8 @@ function removeBook(id) {
 
 const remove = document.querySelectorAll('.btn-remove');
 remove.forEach((item) => {
-  item.addEventListener('click', (e) => {
+  item.addEventListener('click',(e) => {
     e.preventDefault();
     removeBook(item.getAttribute('value'));
-    console.log(books);
   });
 });

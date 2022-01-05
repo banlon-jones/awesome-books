@@ -10,6 +10,12 @@ if (localStorage.getItem('books')) {
   books = JSON.parse(localStorage.getItem('books'));
 }
 
+function removeBook(id) {
+    books = books.filter((item) => { Number(id) !== item.id });
+    localStorage.setItem('books', JSON.stringify(books));
+    display();
+}
+
 function display() {
   bookList.innerHTML = '';
   books.forEach((item) => {
@@ -42,10 +48,3 @@ add.addEventListener('click', (e) => {
   e.preventDefault();
   addBook(title.value, author.value);
 });
-
-function removeBook(id) {
-  books = books.filter(item => Number(id) !== item.id);
-  localStorage.setItem('books', JSON.stringify(books));
-  display();
-}
-

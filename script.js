@@ -29,8 +29,9 @@ function addBook(name, author) {
   id =  Math.floor(Math.random()*1000);
   books.push({name, author, id});
   localStorage.setItem("books", JSON.stringify(books));
-  bookList.innerHTML = ``;
-  display();
+  /*bookList.innerHTML = ``;
+  display();*/
+  location.reload();
 }
 
 add.addEventListener("click", (e)=>{
@@ -41,7 +42,7 @@ add.addEventListener("click", (e)=>{
 
 function removeBook(id) {
   books = books.filter((item) => {
-    return item.id !== id;
+    return item.id != id;
   });
   localStorage.setItem("books", JSON.stringify(books));
   location.reload();

@@ -1,5 +1,5 @@
 class Book {
-  constructor (id, name, author) {
+  constructor(id, name, author) {
     this.id = id;
     this.name = name;
     this.author = author;
@@ -43,17 +43,13 @@ contactLink.addEventListener('click', (e) => {
   addNewSection.style.display = 'none';
 });
 
-
 // displaying books in localStorage
 if (localStorage.getItem('books')) {
   books = JSON.parse(localStorage.getItem('books'));
 }
 
-//date
-
 const date = document.querySelector('.date');
 const d = new Date();
-
 date.innerHTML = d;
 
 function removeBook(id) {
@@ -66,7 +62,7 @@ function removeBook(id) {
 function display() {
   bookList.innerHTML = '';
   books.forEach((item) => {
-    let book = new Book(item.id, item.name, item.author);
+    const book = new Book(item.id, item.name, item.author);
     bookList.innerHTML += `<div><p> "${book.name}" by ${book.author}
     <button class="btn-remove" value="${book.id}"> remove </button>
     </p>
@@ -95,4 +91,3 @@ add.addEventListener('click', (e) => {
   e.preventDefault();
   addBook(title.value, author.value);
 });
-

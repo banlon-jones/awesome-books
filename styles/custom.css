@@ -1,3 +1,90 @@
 body {
   color: #000;
 }
+header {
+  margin: 0;
+}
+nav {
+  background-color: #333;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 16px 8px;
+}
+
+.brand {
+  color: white;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.menu-item {
+  float: left;
+}
+
+.menu-item a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  background-color: #111;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.form-control {
+  padding: 9px;
+  width: 100%;
+}
+
+#add {
+  padding: 8px 18px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn-remove {
+  float: right;
+}
+
+.title {
+  text-align: center;
+}
+
+.book-list {
+  padding: 2% 20%;
+}
+
+.date {
+  float: right;
+  padding: 1px;
+}
+
+.Books-section {
+  margin-top: 30px;
+}
+
+.addBook-section {
+  margin-top: 30px;
+  padding: 2% 20%;
+}
+
+.contact-section {
+  margin-top: 30px;
+  padding: 2% 20%;
+}

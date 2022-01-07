@@ -4,19 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/custom.css"/>
     <title>Awesome books</title>
 </head>
 <body>
-    <h1> Awesome books </h1>
+<header>
+    <nav>
+        <div class="brand"> <h2>Awesome Books</h2> </div>
+        <ul class="menu">
+            <li class="menu-item" id="list"><a class="active" href="#">List</a></li>
+            <li class="menu-item" id="new"><a href="#">Add new</a></li>
+            <li class="menu-item" id="contact"><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <div class="date"></div>
+</section>
+<section class="Books-section">
+    <h1 class="title"> All Awesome books </h1>
     <div class="book-list">
     </div>
+</section>
+<section class="addBook-section">
     <div>
+        <h1 class="title"> Add a new book </h1>
         <form id="add-book" >
-            <input type="text" name="title" placeholder="title" required/><br/><br/>
-            <input type="text" name="author" placeholder="Author" required><br/><br/>
+            <input class="form-control" type="text" name="title" placeholder="title" required/><br/><br/>
+            <input class="form-control" type="text" name="author" placeholder="Author" required><br/><br/>
             <input id="add" type="submit" value="Add"/>
         </form>
     </div>
+</section>
+<section class="contact-section">
+    <h1 class="title"> Contact Information </h1>
+    <div>
+        <p> Do you have any questions or you just want to say "Hello" you can reach out to us </p>
+        <ul>
+            <li>Our Email <a href="mailto:banlonjones@gmail.com"> banlonjones@gmail.com</a> </li>
+            <li> Our phone: +237 670612010 </li>
+            <li> Our address: Cameroon, buea, molyko, HIMS junction </li>
+        </ul>
+    </div>
+</section>
+<footer>
+    <nav>
+        <div class="brand"> Copyright: @ 2022 </div>
+    </nav>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
